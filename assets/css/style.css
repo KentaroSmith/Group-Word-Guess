@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-#caps_beautiful_face{
-    width:100%;
-}
-h1{
-    color:green;
-}
-body{
-    background-color:#fff7e0;
-}
-
-
-
-=======
 body {
-    background-image: url(../images/background.jpeg);
+    background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
     font-size: 18px;
@@ -21,4 +7,61 @@ body {
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     color: whitesmoke;
 }
->>>>>>> 2e937206037be3dad1e73ded8c69e4e4b61fd466
+
+#heading {
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    opacity: .9;
+}
+
+.card-body {
+    color: rgb(4, 189, 50);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 30;
+    font-size: medium;
+    font-style: italic;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(2, 6, 252);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: -webkit-xxx-large; 
+}
+
+h3 {
+    margin: 0 0 20 0;
+    padding: 0;
+    color: rgb(255, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 30;
+    font-size: xx-large;
+    font-style: italic;
+}
+
+h5 {
+    color: rgb(4, 189, 50);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 30;
+    font-size: medium;
+    font-style: italic;
+}
+
+#main-container {
+    width: 30%;
+    height: 600px;
+    margin: 0 200px 0 0;
+    float: right;
+    border: 3px dashed;
+    border-color: whitesmoke;
+    text-align: center;
+    color: rgb(197, 250, 7);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
