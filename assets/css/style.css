@@ -1,0 +1,9 @@
+body {
+    background-image: url(../images/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    font-size: 18px;
+    line-height: 36px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    color: whitesmoke;
+}
