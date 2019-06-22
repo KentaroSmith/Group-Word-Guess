@@ -13,8 +13,14 @@ body {
     margin: 0;
 }
 
+.jumbotron {
+    padding: 2rem;
+    margin-bottom: 5rem; 
+}
+
 .container {
     opacity: .9;
+
 }
 
 .card-body {
@@ -38,7 +44,7 @@ h3 {
     margin: 0 0 20 0;
     padding: 0;
     color: rgb(255, 0, 0);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     font-weight: 30;
     font-size: xx-large;
     font-style: italic;
@@ -46,9 +52,9 @@ h3 {
 
 h5 {
     color: rgb(4, 189, 50);
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 30;
-    font-size: medium;
+    font-family: monospace;
+    font-weight: 40;
+    font-size: large;
     font-style: italic;
 }
 
@@ -63,5 +69,3 @@ h5 {
     color: rgb(197, 250, 7);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
-

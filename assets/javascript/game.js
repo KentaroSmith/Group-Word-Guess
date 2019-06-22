@@ -10,36 +10,41 @@ if ($(document).ready) {
     var lettersInAvenger = [];
     var numOfBlanks = 0;
     var guessesPerGame = 12;
-    var answer = []; 
-    var wrongGuesses = [];
+    var answer = ""; 
+    var wrongGuesses = "";
     var gameStarted = false;
+    var guessesLeft = 0;
+    var wins=0
+    var losses=0;
+    
 
     //screen elements
-    $communications = $('#game-master');
-    $winCounter = $('#win-counter');
-    $lossCounter = $('#loss-counter');
-    $guessesLeft = $('#guesses-left');
-    $wrongGuesses = $("#wrong-guesses");
-    $wordBlanks = $('#word-blanks');
+    var $communications = $('#game-master');
+    var $winCounter = $('#win-counter');
+    var $lossCounter = $('#loss-counter');
+    var $guessesLeft = $('#guesses-left');
+    var $wrongGuesses = $("#wrong-guesses");
+    var $wordBlanks = $('#word-blanks');
 
 
     function startGame() {
         // reset counters
-        $guessesLeft = guessesPerGame;
+        guessesLeft = guessesPerGame;
+        $guessesLeft.text(guessesLeft);
 
         //pick a word for the puzzle
-        selectedAvenger = friends[Math.floor(Math.random() * friends.length)];
+        selectedAvenger = avengers[Math.floor(Math.random() * avengers.length)];
         lettersInAvenger = selectedAvenger.split("");
         numOfBlanks = lettersInAvenger.length;
 
         //update the screen with the new word
-        for(var i=0; i<lettersInAvenger.length; i++){
+        for(var i=0; i<numOfBlanks; i++){
             answer.push("_");
         }
 
         //update guessed letters list
-        $wrongGuesses = wrongGuesses;
-        $communications.text("Type a letter to guess!")
+        $wrongGuesses.text(wrongGuesses);
+        $communications.text("Type a letter to guess!");
         gameStarted = true;
     }
 
@@ -49,23 +54,39 @@ if ($(document).ready) {
         if (lettersInAvenger.includes(letter)) {
             //right guess
             console.log("right guess");
-            /*
+            
             for (var i = 0; i < numOfBlanks; i++){
-                if(lettersInAvenger.includes(letter) && lettersInAvenger[i] == letter){
-                    answer[i] = letter;
+                if(lettersInAvenger[i] == letter){
+                    $wordBlanks.text(letter);
                 }
                 else{
                 
                 }
             }
-            */
+            // check if the player completed the puzzle
+            if (answer === selectedAvenger) {
+                // player won: Todd
+                $communications = "Congrats! You WIN! Press any key to play again.";
+                wins = parseInt($winCounter.text()) + 1;
+                $winCounter.text(wins);
+                startGame();
+            }
+
+
         } 
         else {
             //wrong guess
-            guesses--;
-            guessedLetters.push(letter);
-            $(guesses);
-            $("guessed-letters-list").html(gussedLetters);
+            guessesLeft--;
+            wrongGuesses += letter;
+            $guessesLeft.text(guessesLeft);
+            $wrongGuesses.text(wrongGuesses);
+
+            if (guessesLeft === 0) {
+                $communications="Congrats! You suck. Play again?";
+                losses=losses+1;
+                $lossCounter.text(losses);
+                startGame();
+            }
         }
        
         }
@@ -88,5 +109,5 @@ if ($(document).ready) {
             }
         });
     });
-}
+
     
